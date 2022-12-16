@@ -1,7 +1,7 @@
 ## Introduction ##
 BrazosTweaker is a tool for undervolting and underclocking AMD Brazos platform (Zacate E-350, E-450 / Ontario C-50, C-60, C-70, E2-1800) APU's under Windows 7 (XP/Vista). By using it, you can achieve longer batterylife (lower power consumption) as well as lower processor temperatures.
 
-Original version of the tool hosted at [Google Code](https://code.google.com/archive/p/brazostweaker/) has been created Martin Kinkelin and Sven Wittek. Compared to the original version, this successor improves NorthBridge undervolting capabilities of the tool:
+Original version of the tool hosted at [Google Code](https://code.google.com/archive/p/brazostweaker/) has been created Martin Kinkelin and Sven Wittek. Compared to the original version, this successor version published here improves NorthBridge undervolting capabilities of the tool:
 - The original version of the tool had an error in its service implementation. Unlike the frontend application, the service missed to set up all necessary CPU registers, which prevented NB VID settings from taking effect after startup or resume. This had effect on both NBP1 as well as NBP0 states.
 - The original version of the tool as well as original BIOS implementations incorrectly applied voltage settings of NB P1 state, which effectively made NBP1 to inherit NBP0 VID.
 
