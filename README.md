@@ -1,4 +1,5 @@
-Tool for undervolting and underclocking AMD Brazos platform (Zacate E-350, E-450 / Ontario C-50, C-60, C-70, E2-1800) APU's under Windows 7 (XP/Vista). By using it, you can achieve longer batterylife (lower power consumption) as well as lower processor temperatures.
+## Introduction ##
+BrazosTweaker is a tool for undervolting and underclocking AMD Brazos platform (Zacate E-350, E-450 / Ontario C-50, C-60, C-70, E2-1800) APU's under Windows 7 (XP/Vista). By using it, you can achieve longer batterylife (lower power consumption) as well as lower processor temperatures.
 
 Original version of the tool hosted at [Google Code](https://code.google.com/archive/p/brazostweaker/) has been created Martin Kinkelin and Sven Wittek. Compared to the original version, this successor improves NorthBridge undervolting capabilities of the tool:
 - The original version of the tool had an error in its service implementation. Unlike the frontend application, the service missed to set up all necessary CPU registers, which prevented NB VID settings from taking effect after startup or resume. This had effect on both NBP1 as well as NBP0 states.
@@ -60,13 +61,11 @@ There is no opportunity to mess with the dividers on the NB so far.
 If everything looks alright after you apply new settings, you can download FurMark, which is program to do some stress testing. Doing that, tells you, if the system is really stable in most cases. It avoids getting blue screens or freezes later, which can be really annoying.
 
 One should stress each of the P-states and NB P-separately. This can be achieved by modifying the selecting specific Windows power options:
-  1. Press Windows Key and enter "Power Options"
-  1. Power Options should open up
-  1. On "Balanced" -> click "Change plan settings"
-  1. click below Link "Change advanced power settings" on the newly opened page
-  1. Scroll down to "Processor power management" and click on the "+"
-  1. Now you can play around with Minimum and Maximum processor state (put them to the same value, if you want to have a constant PState)
-  1. Note that these values are percentages, i.e. a value of 100% for Min and Max keeps your processor always in P0
+  1. Go to "Power Options" in the Control Panel. 
+  1. In the "Power Options" snap-in, click "Change plan settings" against your active power plan.
+  1. In the "Edit Plan Settings" snap-in, click "Change advanced power settings".
+  1. To limit transitions between P-states, tweak "Minimum processor state" and "Maximum processor state" under "Processor power management" branch in the newly opened "Power Options" dialog window. 
+  1. To limit transitions between NB P-states, tweak "ATI Powerplay Settings" under "ATI Graphics Power Settings" branch in the same dialog window.
 
 Just check, while running the stress test, where the asterisk is! If you want to test P1, the asterisk, should never go to P0, but while stopping the test, it can go to P2.
 
