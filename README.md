@@ -1,5 +1,11 @@
 Tool for undervolting and underclocking AMD Brazos platform (Zacate E-350, E-450 / Ontario C-50, C-60, C-70, E2-1800) APU's under Windows 7 (XP/Vista). By using it, you can achieve longer batterylife (lower power consumption) as well as lower processor temperatures.
 
+Original version of the tool hosted at [Google Code](https://code.google.com/archive/p/brazostweaker/) has been created Martin Kinkelin and Sven Wittek. Compared to the original version, this successor improves NorthBridge undervolting capabilities of the tool:
+- The original version of the tool had an error in its service implementation. Unlike the frontend application, the service missed to set up all necessary CPU registers, which prevented NB VID settings from taking effect after startup or resume. This had effect on both NBP1 as well as NBP0 states.
+- The original version of the tool as well as original BIOS implementations incorrectly applied voltage settings of NB P1 state, which effectively made NBP1 to inherit NBP0 VID.
+
+The improved version available here is fully inline with BKDG (BIOS and Kernel Developer's Guide) for AMD Family 14h, but is tested only on E-350 APU. Considering that all other APUs listed above belong to the same CPU family 14h, the improvements are expected to work on the rest of them as well. Notice that the original version could allow you to go very low with undervolting NBP1 state, because in reality it was faky. Using the same NBP1 settings with the new version may cause your system to crash. Basically, you need to find out valid NBP1 voltage settings as described below from scratch. To confirm improvements over the original settings you can compare tempeartures of your system against setup with the original tool (this is actually how I reverse engineered APU behavior myself). Don't forget to fix fan speed for the duration of your temperature tests.
+
 ## Installation ##
 To use the tool and it's built-in service, you need to obviously install the given files from the Download section. It could be, that you need to download and install Microsofts .NET Framework 4 upfront, but only in case, it can't be found.
 If you already have a previous version of the BrazosTweaker (OntarioTweaker or PhenomMsrTweaker) installed, I strongly suggest to uninstall it first.
@@ -18,11 +24,8 @@ You can see the current active PState by watching the `"*"`. The available PStat
 With the tool, you can now customize the voltage, which goes into your CPU (CPU VID) for each of the available PStates. Furthermore you can change the divider to get to a different CPU clock than stock.
 
 You can start with the following changes (these are working for most of the users)
-
   * P0 - 1.225V
-
   * P1 - 1.05V
-
   * P2 - 0.85V
 
 If you click "Apply" on the below right, these settings will be temporary set, until you restart or put your system into sleep. You can check the settings by using a well known tool called CPU-Z.
