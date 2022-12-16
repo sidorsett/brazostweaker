@@ -4,9 +4,6 @@ Tool for undervolting and underclocking AMD Brazos platform (Zacate E-350, E-450
 To use the tool and it's built-in service, you need to obviously install the given files from the Download section. It could be, that you need to download and install Microsofts .NET Framework 4 upfront, but only in case, it can't be found.
 If you already have a previous version of the BrazosTweaker (OntarioTweaker or PhenomMsrTweaker) installed, I strongly suggest to uninstall it first.
 
-BrazosTweaker under Win8
-hint from user alejandronova
-
 To install BrazosTweaker in Windows 8, you need to enable the .NET Runtime 2.0. You do that in the "Enable/Disable Windows features" that you'll find in "Programs and Features"
 
 ## Tabs ##
