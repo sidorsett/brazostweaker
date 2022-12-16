@@ -27,32 +27,6 @@ You can start with the following changes (these are working for most of the user
 
 If you click "Apply" on the below right, these settings will be temporary set, until you restart or put your system into sleep. You can check the settings by using a well known tool called CPU-Z.
 
-If everything looks alright, you can download Orthos, which is program to do some stress testing. Doing that, tells you, if the system is really stable in most cases. It avoids getting blue screens or freezes later, which can be really annoying.
-
-One should stress each of the PStates separately. This can be achieved by modifying the selecting specific power schemes. On the Lenovo S205, you can use the Energy Management (names might differ):
-
-  * P0 testing -> Power Scheme High Performance
-  * P1 testing -> Power Scheme Balanced
-  * P2 testing -> Power Scheme Best Battery life
-
-On all other systems, you can do the following:
-  1. Press Windows Key and enter "Power Options"
-  1. Power Options should open up
-  1. On "Balanced" -> click "Change plan settings"
-  1. click below Link "Change advanced power settings" on the newly opened page
-  1. Scroll down to "Processor power management" and click on the "+"
-  1. Now you can play around with Minimum and Maximum processor state (put them to the same value, if you want to have a constant PState)
-  1. Note that these values are percentages, i.e. a value of 100% for Min and Max keeps your processor always in P0
-
-Just check, while running the stress test, where the asterisk is! If you want to test P1, the asterisk, should never go to P0, but while stopping the test, it can go to P2.
-
-In case, the systems hangs during testing, you know the selected voltage was too low for that PState. Just simply hold the power button for a few second and your system restarts without the modified voltages.
-After restart increase voltage a bit and start stressing the system again. I strongly suggest, not to use a voltage for later use, which is just one step away from, where it hung up. Please add about 25mV at least to have some margin.
-
-Once all that is done and everything runs smoothly, **and only in that case**, you can click on the "Service..." button. Before you read on, please consider looking at this: DeactiveService. By setting that up, there will be a service in the background, which applies the adjusted voltages after coming out of sleep or while booting Win.
-You just need to click "Update" to get the current settings, check the selection box "Make custom P-state settings permanent" and hit "Apply".
-Now you are done.
-
 ### Clock/Divider ###
 If you want, you can play around with the dividers to adjust used clocks for each PState. For example, I let my system run for a while on 400MHz, while lowering the voltage to about 0.7V.
 Unfortunately you can't overclock by using lower dividers, since the CPU seems to internally lock them to a specific value.
@@ -63,7 +37,7 @@ Unfortunately you can't overclock by using lower dividers, since the CPU seems t
   * Divider 2
   * Maximum clock 32/2\*100MHz = 1600MHz
 
-Even though you can select a divider smaller than 2 on an E-350, the CPU blocks that and just runs stil at 1.6GHz!
+Even though you can select a divider smaller than 2 on an E-350, the CPU blocks that and just runs still at 1.6GHz!
 
 ## NB PStates ##
 
@@ -79,8 +53,27 @@ Just a little lower and it hangs. Just press the Power button for a while and it
 ### Clock/Divider ###
 There is no opportunity to mess with the dividers on the NB so far.
 
+## Testing ##
+If everything looks alright after you apply new settings, you can download FurMark, which is program to do some stress testing. Doing that, tells you, if the system is really stable in most cases. It avoids getting blue screens or freezes later, which can be really annoying.
+
+One should stress each of the P-states and NB P-separately. This can be achieved by modifying the selecting specific Windows power options:
+  1. Press Windows Key and enter "Power Options"
+  1. Power Options should open up
+  1. On "Balanced" -> click "Change plan settings"
+  1. click below Link "Change advanced power settings" on the newly opened page
+  1. Scroll down to "Processor power management" and click on the "+"
+  1. Now you can play around with Minimum and Maximum processor state (put them to the same value, if you want to have a constant PState)
+  1. Note that these values are percentages, i.e. a value of 100% for Min and Max keeps your processor always in P0
+
+Just check, while running the stress test, where the asterisk is! If you want to test P1, the asterisk, should never go to P0, but while stopping the test, it can go to P2.
+
+In case, the systems hangs during testing, you know the selected voltage was too low for that PState. Just simply hold the power button for a few second and your system restarts without the modified voltages.
+After restart increase voltage a bit and start stressing the system again. I strongly suggest, not to use a voltage for later use, which is just one step away from, where it hung up. Please add about 25mV at least to have some margin.
+
+
 ## Service ##
-Follow these steps to disable the service in case your system stops to boot into Windows:
+### Recovery plan ###
+You will need to follow these steps to disable the service in case your system stops to boot into Windows:
   1. In order to disable the service, you need to boot Windows in "Safe mode". While doing this, the BrazosTweaker service doesn't get enabled.
   1. If Windows has booted succesfully in "Safe mode", you can click on the Windows-Start button and enter "Services" in the below line. Hit "Enter".
   1. Now you can see all installed services and should look for "BrazosTweaker service".
@@ -89,3 +82,9 @@ Follow these steps to disable the service in case your system stops to boot into
   1. Now you can restart your system.
   1. Once Windows has been restarted, start BrazosTweaker and try to find the rootcause of the hangs (too low voltage for a certain PState?, bug in the code, etc.).
   1. If the problem was found and fixed, you can re-enable the service by starting with 2. and switching back to "Automatic".
+
+### Enable service ###
+After you found out stable configuration, stress-tested your system with custom voltage and clock settings, ensured everything runs smoothly, familarized yourself with the recovery plan, **and only in that case**, you can click on the "Service..." button. By setting that up, there will be a service in the background, which applies the adjusted voltages after coming out of sleep or while booting Win.
+
+You just need to click "Update" to get the current settings, check the selection box "Make custom P-state settings permanent" and hit "Apply".
+Now you are done.
