@@ -19,7 +19,7 @@ Once it has started up, you will see a window six different tabs. The three tabs
 ## CPU PStates ##
 Let's start with the first three tabs.
 If you use the E-350 APU, your system uses all three PStates, whereas on the C-50 only two of them are used.
-You can see the current active PState by watching the `"*"`. The available PStates are called P0 / P1 / P2. PState P0 is always the fastest mode, while P2 (E-350) is the slowest one. Depending on the current workload of your system, it will switch dydmaically between them. As you can imagine, the P0 is drawing more current than P1 and P2, which is directly related to battery life you can get.
+You can see the current active PState by watching core progress bars followed by labels. The available PStates are called P0 / P1 / P2. PState P0 is always the fastest mode, while P2 (E-350) is the slowest one. Depending on the current workload of your system, it will switch dydmaically between them. As you can imagine, the P0 is drawing more current than P1 and P2, which is directly related to battery life you can get.
 
 ### Voltage ###
 With the tool, you can now customize the voltage, which goes into your CPU (CPU VID) for each of the available PStates. Furthermore you can change the divider to get to a different CPU clock than stock.
