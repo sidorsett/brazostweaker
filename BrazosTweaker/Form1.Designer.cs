@@ -337,7 +337,7 @@
             this.monitorCheckBox.AutoSize = true;
             this.monitorCheckBox.Checked = true;
             this.monitorCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.monitorCheckBox.Location = new System.Drawing.Point(8, 30);
+            this.monitorCheckBox.Location = new System.Drawing.Point(8, 29);
             this.monitorCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.monitorCheckBox.Name = "monitorCheckBox";
             this.monitorCheckBox.Size = new System.Drawing.Size(110, 17);
@@ -351,7 +351,7 @@
             // alwaysOnTopCheck
             // 
             this.alwaysOnTopCheck.AutoSize = true;
-            this.alwaysOnTopCheck.Location = new System.Drawing.Point(202, 30);
+            this.alwaysOnTopCheck.Location = new System.Drawing.Point(202, 29);
             this.alwaysOnTopCheck.Margin = new System.Windows.Forms.Padding(2);
             this.alwaysOnTopCheck.Name = "alwaysOnTopCheck";
             this.alwaysOnTopCheck.Size = new System.Drawing.Size(92, 17);
