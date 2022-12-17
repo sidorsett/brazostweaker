@@ -66,7 +66,7 @@
             this.pstateLabel2 = new System.Windows.Forms.Label();
             this.pstateLabel3 = new System.Windows.Forms.Label();
             this.pstateLabel4 = new System.Windows.Forms.Label();
-            this.paypal = new System.Windows.Forms.LinkLabel();
+            //this.paypal = new System.Windows.Forms.LinkLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
@@ -465,7 +465,8 @@
             this.pstateLabel4.Text = "-1";
             // 
             // paypal
-            // 
+            //
+/*
             this.paypal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.paypal.AutoSize = true;
@@ -477,6 +478,7 @@
             this.paypal.TabStop = true;
             this.paypal.Text = "Please donate to support development.";
             this.paypal.Click += new System.EventHandler(this.paypal_Click);
+*/
             // 
             // timer1
             // 
