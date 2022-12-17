@@ -355,14 +355,14 @@ private:
                 //const uint mask = 0x07F7F000; //enable overwrite of Vid and Div
                 const DWORD mask = 0x0007F000; //enable overwrite of Vid only
                 config = (config & ~mask) | (lowMsr & mask);
-                DWORD voltage;
-				ReadPciConfigDwordEx(0xC3, 0x15C, &voltage);
-                const DWORD maskvolt = 0x00007F00;
-                DWORD check = lowMsr >> 12 & 0x7F;
-                voltage = (voltage & ~maskvolt) | ((check << 8) & maskvolt);
+                //DWORD voltage;
+                //ReadPciConfigDwordEx(0xC3, 0x15C, &voltage);
+                //const DWORD maskvolt = 0x00007F00;
+                //DWORD check = lowMsr >> 12 & 0x7F;
+                //voltage = (voltage & ~maskvolt) | ((check << 8) & maskvolt);
                 WritePciConfigDword(0xC3, 0xDC, config);
-                WritePciConfigDwordEx(0xC3, 0x15C, voltage);
-			} else if (index == 1)
+                //WritePciConfigDwordEx(0xC3, 0x15C, voltage);
+            } else if (index == 1)
             {
                 // save the new settings
                 //K10Manager.DisDllShutDown();
@@ -372,11 +372,13 @@ private:
                 const DWORD mask = 0x00007F00; //enable VID modification only
                 config = (config & ~mask) | (lowMsr & mask);
                 DWORD voltage;
-				ReadPciConfigDwordEx(0xC3, 0x15C, &voltage);
-                const DWORD maskvolt = 0x0000007F;
+                ReadPciConfigDwordEx(0xC3, 0x15C, &voltage);
+                //const DWORD maskvolt = 0x0000007F;
+		const DWORD maskvolt = 0x7F7F7F7F;
                 DWORD check = lowMsr >> 8;
-                voltage = (voltage & ~maskvolt) | (check & maskvolt);
-				WritePciConfigDword(0xC6, 0x90, config);
+                //voltage = (voltage & ~maskvolt) | (check & maskvolt);
+		voltage = (voltage & ~maskvolt) | ((check << 24) | (check << 16) | (check << 8) | check & maskvolt);
+                WritePciConfigDword(0xC6, 0x90, config);
                 WritePciConfigDwordEx(0xC3, 0x15C, voltage);
             }
 			if (curNbstate == 0)
