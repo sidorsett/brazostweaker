@@ -86,7 +86,7 @@
             // 
             this.applyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.applyButton.AutoSize = true;
-            this.applyButton.Location = new System.Drawing.Point(277, 256);
+            this.applyButton.Location = new System.Drawing.Point(277, 243);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(80, 27);
             this.applyButton.TabIndex = 4;
@@ -101,7 +101,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.powerSchemesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.powerSchemesComboBox.FormattingEnabled = true;
-            this.powerSchemesComboBox.Location = new System.Drawing.Point(12, 260);
+            this.powerSchemesComboBox.Location = new System.Drawing.Point(12, 247);
             this.powerSchemesComboBox.Name = "powerSchemesComboBox";
             this.powerSchemesComboBox.Size = new System.Drawing.Size(171, 21);
             this.powerSchemesComboBox.TabIndex = 2;
@@ -111,7 +111,7 @@
             // 
             this.serviceButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.serviceButton.AutoSize = true;
-            this.serviceButton.Location = new System.Drawing.Point(191, 256);
+            this.serviceButton.Location = new System.Drawing.Point(191, 243);
             this.serviceButton.Name = "serviceButton";
             this.serviceButton.Size = new System.Drawing.Size(80, 27);
             this.serviceButton.TabIndex = 3;
@@ -129,7 +129,7 @@
             // 
             // cpu1Bar
             // 
-            this.cpu1Bar.Location = new System.Drawing.Point(47, 62);
+            this.cpu1Bar.Location = new System.Drawing.Point(47, 49);
             this.cpu1Bar.Margin = new System.Windows.Forms.Padding(2);
             this.cpu1Bar.Name = "cpu1Bar";
             this.cpu1Bar.Size = new System.Drawing.Size(56, 12);
@@ -138,7 +138,7 @@
             // 
             // cpu2Bar
             // 
-            this.cpu2Bar.Location = new System.Drawing.Point(47, 77);
+            this.cpu2Bar.Location = new System.Drawing.Point(47, 64);
             this.cpu2Bar.Margin = new System.Windows.Forms.Padding(2);
             this.cpu2Bar.Name = "cpu2Bar";
             this.cpu2Bar.Size = new System.Drawing.Size(56, 13);
@@ -147,7 +147,7 @@
             // 
             // cpu3Bar
             // 
-            this.cpu3Bar.Location = new System.Drawing.Point(47, 94);
+            this.cpu3Bar.Location = new System.Drawing.Point(47, 81);
             this.cpu3Bar.Margin = new System.Windows.Forms.Padding(2);
             this.cpu3Bar.Name = "cpu3Bar";
             this.cpu3Bar.Size = new System.Drawing.Size(56, 13);
@@ -156,7 +156,7 @@
             // 
             // cpu4Bar
             // 
-            this.cpu4Bar.Location = new System.Drawing.Point(47, 111);
+            this.cpu4Bar.Location = new System.Drawing.Point(47, 98);
             this.cpu4Bar.Margin = new System.Windows.Forms.Padding(2);
             this.cpu4Bar.Name = "cpu4Bar";
             this.cpu4Bar.Size = new System.Drawing.Size(56, 13);
@@ -174,7 +174,7 @@
             this.tabControl1.Controls.Add(this.tabPageNbP0);
             this.tabControl1.Controls.Add(this.tabPageNbP1);
             this.tabControl1.Controls.Add(this.tabPageStatus);
-            this.tabControl1.Location = new System.Drawing.Point(12, 130);
+            this.tabControl1.Location = new System.Drawing.Point(12, 117);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(345, 120);
@@ -314,7 +314,7 @@
             // 
             // nbBar
             // 
-            this.nbBar.Location = new System.Drawing.Point(225, 62);
+            this.nbBar.Location = new System.Drawing.Point(225, 49);
             this.nbBar.Margin = new System.Windows.Forms.Padding(2);
             this.nbBar.Name = "nbBar";
             this.nbBar.Size = new System.Drawing.Size(56, 12);
@@ -324,7 +324,7 @@
             // pstateLabel
             // 
             this.pstateLabel.AutoSize = true;
-            this.pstateLabel.Location = new System.Drawing.Point(116, 44);
+            this.pstateLabel.Location = new System.Drawing.Point(116, 31);
             this.pstateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pstateLabel.Name = "pstateLabel";
             this.pstateLabel.Size = new System.Drawing.Size(69, 13);
@@ -337,7 +337,7 @@
             this.monitorCheckBox.AutoSize = true;
             this.monitorCheckBox.Checked = true;
             this.monitorCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.monitorCheckBox.Location = new System.Drawing.Point(8, 43);
+            this.monitorCheckBox.Location = new System.Drawing.Point(8, 30);
             this.monitorCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.monitorCheckBox.Name = "monitorCheckBox";
             this.monitorCheckBox.Size = new System.Drawing.Size(110, 17);
@@ -351,7 +351,7 @@
             // alwaysOnTopCheck
             // 
             this.alwaysOnTopCheck.AutoSize = true;
-            this.alwaysOnTopCheck.Location = new System.Drawing.Point(202, 43);
+            this.alwaysOnTopCheck.Location = new System.Drawing.Point(202, 30);
             this.alwaysOnTopCheck.Margin = new System.Windows.Forms.Padding(2);
             this.alwaysOnTopCheck.Name = "alwaysOnTopCheck";
             this.alwaysOnTopCheck.Size = new System.Drawing.Size(92, 17);
@@ -366,7 +366,7 @@
             // 
             this.ecread.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.ecread.Location = new System.Drawing.Point(12, 20);
+            this.ecread.Location = new System.Drawing.Point(12, 7);
             this.ecread.MinimumSize = new System.Drawing.Size(226, 20);
             this.ecread.Name = "ecread";
             this.ecread.Size = new System.Drawing.Size(231, 20);
@@ -377,7 +377,7 @@
             // cfgTempLabel
             // 
             this.cfgTempLabel.AutoSize = true;
-            this.cfgTempLabel.Location = new System.Drawing.Point(199, 77);
+            this.cfgTempLabel.Location = new System.Drawing.Point(199, 64);
             this.cfgTempLabel.Name = "cfgTempLabel";
             this.cfgTempLabel.Size = new System.Drawing.Size(79, 13);
             this.cfgTempLabel.TabIndex = 24;
@@ -387,7 +387,7 @@
             // core1label
             // 
             this.core1label.AutoSize = true;
-            this.core1label.Location = new System.Drawing.Point(5, 61);
+            this.core1label.Location = new System.Drawing.Point(5, 48);
             this.core1label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.core1label.Name = "core1label";
             this.core1label.Size = new System.Drawing.Size(38, 13);
@@ -397,7 +397,7 @@
             // core2label
             // 
             this.core2label.AutoSize = true;
-            this.core2label.Location = new System.Drawing.Point(5, 77);
+            this.core2label.Location = new System.Drawing.Point(5, 64);
             this.core2label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.core2label.Name = "core2label";
             this.core2label.Size = new System.Drawing.Size(38, 13);
@@ -407,7 +407,7 @@
             // core3label
             // 
             this.core3label.AutoSize = true;
-            this.core3label.Location = new System.Drawing.Point(5, 94);
+            this.core3label.Location = new System.Drawing.Point(5, 81);
             this.core3label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.core3label.Name = "core3label";
             this.core3label.Size = new System.Drawing.Size(38, 13);
@@ -417,7 +417,7 @@
             // core4label
             // 
             this.core4label.AutoSize = true;
-            this.core4label.Location = new System.Drawing.Point(5, 111);
+            this.core4label.Location = new System.Drawing.Point(5, 98);
             this.core4label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.core4label.Name = "core4label";
             this.core4label.Size = new System.Drawing.Size(38, 13);
@@ -427,7 +427,7 @@
             // pstateLabel1
             // 
             this.pstateLabel1.AutoSize = true;
-            this.pstateLabel1.Location = new System.Drawing.Point(113, 61);
+            this.pstateLabel1.Location = new System.Drawing.Point(113, 48);
             this.pstateLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pstateLabel1.Name = "pstateLabel1";
             this.pstateLabel1.Size = new System.Drawing.Size(16, 13);
@@ -437,7 +437,7 @@
             // pstateLabel2
             // 
             this.pstateLabel2.AutoSize = true;
-            this.pstateLabel2.Location = new System.Drawing.Point(113, 77);
+            this.pstateLabel2.Location = new System.Drawing.Point(113, 64);
             this.pstateLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pstateLabel2.Name = "pstateLabel2";
             this.pstateLabel2.Size = new System.Drawing.Size(16, 13);
@@ -447,7 +447,7 @@
             // pstateLabel3
             // 
             this.pstateLabel3.AutoSize = true;
-            this.pstateLabel3.Location = new System.Drawing.Point(113, 95);
+            this.pstateLabel3.Location = new System.Drawing.Point(113, 82);
             this.pstateLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pstateLabel3.Name = "pstateLabel3";
             this.pstateLabel3.Size = new System.Drawing.Size(16, 13);
@@ -457,7 +457,7 @@
             // pstateLabel4
             // 
             this.pstateLabel4.AutoSize = true;
-            this.pstateLabel4.Location = new System.Drawing.Point(113, 111);
+            this.pstateLabel4.Location = new System.Drawing.Point(113, 98);
             this.pstateLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.pstateLabel4.Name = "pstateLabel4";
             this.pstateLabel4.Size = new System.Drawing.Size(16, 13);
@@ -500,7 +500,7 @@
             // nbLabel
             // 
             this.nbLabel.AutoSize = true;
-            this.nbLabel.Location = new System.Drawing.Point(199, 61);
+            this.nbLabel.Location = new System.Drawing.Point(199, 48);
             this.nbLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nbLabel.Name = "nbLabel";
             this.nbLabel.Size = new System.Drawing.Size(22, 13);
@@ -510,7 +510,7 @@
             // nbPstateLabel
             // 
             this.nbPstateLabel.AutoSize = true;
-            this.nbPstateLabel.Location = new System.Drawing.Point(288, 62);
+            this.nbPstateLabel.Location = new System.Drawing.Point(288, 49);
             this.nbPstateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nbPstateLabel.Name = "nbPstateLabel";
             this.nbPstateLabel.Size = new System.Drawing.Size(16, 13);
@@ -520,7 +520,7 @@
             // nbCfgTemp
             // 
             this.nbCfgTemp.AutoSize = true;
-            this.nbCfgTemp.Location = new System.Drawing.Point(284, 77);
+            this.nbCfgTemp.Location = new System.Drawing.Point(284, 64);
             this.nbCfgTemp.Name = "nbCfgTemp";
             this.nbCfgTemp.Size = new System.Drawing.Size(30, 13);
             this.nbCfgTemp.TabIndex = 25;
@@ -530,7 +530,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 295);
+            this.ClientSize = new System.Drawing.Size(369, 282);
             this.Controls.Add(this.nbCfgTemp);
             this.Controls.Add(this.cfgTempLabel);
             this.Controls.Add(this.nbPstateLabel);
