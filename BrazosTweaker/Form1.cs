@@ -449,7 +449,7 @@ namespace BrazosTweaker
 
         private void ShiftTable(int shifty)
         {
-            this.tabControl1.Location = new System.Drawing.Point(12, 130 + shifty);
+            this.tabControl1.Location = new System.Drawing.Point(12, 117 + shifty);
             this.tabControl1.Size = new System.Drawing.Size(345, 120 - shifty);
             this.MinimumSize = new System.Drawing.Size(375, 210 + shifty);
         }
