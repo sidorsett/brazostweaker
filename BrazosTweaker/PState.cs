@@ -102,128 +102,40 @@ namespace BrazosTweaker
                 var previousPriority = Thread.CurrentThread.Priority;
                 Thread.CurrentThread.Priority = ThreadPriority.Highest;
 
+                uint voltage = Program.Ols.ReadPciConfig(0xC3, 0x15C);
+                const uint maskvolt = 0x7F7F7F7F;
+                const uint check = 0x7C7C7C7C;
+                voltage = (voltage & ~maskvolt) | (check & maskvolt);
+                Program.Ols.WritePciConfig(0xC3, 0x15C, voltage);
+
+                //string message = "Start: " + curNbstate;
+
                 //check, if current NB P-State is the one, which is going to be modified
                 index = index - 3;
-                int curNbstate = K10Manager.GetNbPState();
-
-                string message = "Start: " + curNbstate;
-
-                int changedNbstate = curNbstate;
-                bool applyImmediately = (curNbstate != index);
-
-                K10Manager.EnableNBPstateSwitching();
-
-                applyImmediately = (curNbstate != index);
-
-                // if the settings are to be applied immediately, switch temporarily to another P-state
-                if (applyImmediately)
-                {
-                    K10Manager.SwitchToNbPState(index);
-                    for (int i = 0; i < 10; i++)
-                    {
-                        Thread.Sleep(100); // let transitions complete
-                        changedNbstate = K10Manager.GetNbPState();
-                        if (changedNbstate == index)
-                        {
-                            message += " Time_init_switch: " + i;
-                            i = 1000;
-                        }
-                    }
-                }
-                
-                curNbstate = K10Manager.GetNbPState();
-                
                 if (index == 0) // NB P-state0
                 {
-                    //DRAM needs to be set into SelfRefresh
-                    //K10Manager.DisDllShutDown();
-                    //K10Manager.EnterDramSelfRefresh(); //NB Pstate HW switching needs to be disabled before NbPsCtrDis
                     // save the new settings
                     uint config = Program.Ols.ReadPciConfig(0xC3, 0xDC);
-                    //const uint mask = 0x07F7F000; //enable overwrite of Vid and Div
                     const uint mask = 0x0007F000; //enable overwrite of Vid only
                     config = (config & ~mask) | (_msrs[0].Encode(index + 3) & mask);
-                    uint voltage = Program.Ols.ReadPciConfig(0xC3, 0x15C);
-                    //const uint maskvolt = 0x00007F00;
-                    const uint maskvolt = 0x7F7F7F00; //overwriting VIDSelect2 and 3 in addition
-                    uint check = _msrs[0].Encode(index + 3) >> 12 & 0x7F;
-                    voltage = (voltage & ~maskvolt) | ((check << 24) | (check << 16) | (check << 8) & maskvolt);
-
                     Program.Ols.WritePciConfig(0xC3, 0xDC, config);
-                    Program.Ols.WritePciConfig(0xC3, 0x15C, voltage);
                 } else if (index == 1)
                 {
                     // save the new settings
-                    //K10Manager.DisDllShutDown();
-                    //K10Manager.EnterDramSelfRefresh(); //NB Pstate HW switching needs to be disabled before NbPsCtrDis
                     uint config = Program.Ols.ReadPciConfig(0xC6, 0x90);
-                    //const uint mask = 0x00007F7F; //enable DID and VID modification
                     const uint mask = 0x00007F00; //enable VID modification only
                     config = (config & ~mask) | (_msrs[0].Encode(index + 3) & mask);
-                    uint voltage = Program.Ols.ReadPciConfig(0xC3, 0x15C);
-                    const uint maskvolt = 0x0000007F;
-                    uint check = _msrs[0].Encode(index + 3) >> 8;
-                    voltage = (voltage & ~maskvolt) | (check & maskvolt);
-
                     Program.Ols.WritePciConfig(0xC6, 0x90, config);
-                    Program.Ols.WritePciConfig(0xC3, 0x15C, voltage);
-                }
 
-                if (curNbstate == 0)
-                {
-                    K10Manager.SwitchToNbPState(1);
-                    for (int i = 0; i < 10; i++)
+                    int curNbstate = K10Manager.GetNbPState();
+                    if (curNbstate == 1)
                     {
-                        Thread.Sleep(100); // let transitions complete
-                        changedNbstate = K10Manager.GetNbPState();
-                        if (changedNbstate == 1)
-                        {
-                            message += " Time_P0_P1: " + i;
-                            i = 1000;
-                        }
+                        K10Manager.EnableNBPstateSwitching();
+                        K10Manager.SwitchToNbPState(0);
+                        K10Manager.DisableNBPstateSwitching();
                     }
-                    K10Manager.SwitchToNbPState(0);
-                    for (int i = 0; i < 10; i++)
-                    {
-                        Thread.Sleep(100); // let transitions complete
-                        changedNbstate = K10Manager.GetNbPState();
-                        if (changedNbstate == 0)
-                        {
-                            message += " Time_P1_P0: " + i;
-                            i = 1000;
-                        }
-                    }
-                }
-                else if (curNbstate == 1)
-                {
-                    K10Manager.SwitchToNbPState(0);
-                    for (int i = 0; i < 10; i++)
-                    {
-                        Thread.Sleep(100); // let transitions complete
-                        changedNbstate = K10Manager.GetNbPState();
-                        if (changedNbstate == 0)
-                        {
-                            message += " Time_P1_P0: " + i;
-                            i = 1000;
-                        }
-                    }
-                    K10Manager.SwitchToNbPState(1);
-                    for (int i = 0; i < 10; i++)
-                    {
-                        Thread.Sleep(100); // let transitions complete
-                        changedNbstate = K10Manager.GetNbPState();
-                        if (changedNbstate == 1)
-                        {
-                            message += " Time_P0_P1: " + i;
-                            i = 1000;
-                        }
-                    }
-                }
+		}
 
-                //K10Manager.ExitDramSelfRefresh();
-                //K10Manager.EnDllShutDown();
-                    
-                K10Manager.DisableNBPstateSwitching();
                 //MessageBox.Show(message);
                 Thread.CurrentThread.Priority = previousPriority;
             }
