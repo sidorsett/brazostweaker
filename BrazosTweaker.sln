@@ -10,8 +10,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrazosTweaker", "BrazosTweaker\BrazosTweaker.csproj", "{4031CF53-1EDB-4140-BB34-7324C35F57BD}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BrazosTweaker x86 Setup", "BrazosTweaker32Setup\BrazosTweaker32Setup.vdproj", "{CB5B2603-1CA3-4645-B02B-6E728364761B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CA5B3392-C34E-4B5B-A8F7-7A7055A5BFFC} = {CA5B3392-C34E-4B5B-A8F7-7A7055A5BFFC}
+	EndProjectSection
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BrazosTweaker x64 Setup", "BrazosTweaker64Setup\BrazosTweaker64Setup.vdproj", "{EE35DDB7-366C-4472-A342-46C4400F6244}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CA5B3392-C34E-4B5B-A8F7-7A7055A5BFFC} = {CA5B3392-C34E-4B5B-A8F7-7A7055A5BFFC}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BrazosTweakerService", "BrazosTweakerService\BrazosTweakerService.vcxproj", "{CA5B3392-C34E-4B5B-A8F7-7A7055A5BFFC}"
 EndProject
