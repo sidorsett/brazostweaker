@@ -34,7 +34,7 @@ namespace BrazosTweaker
         private static readonly int processBarPerc = 100 / processBarSteps;
 
         private static bool monitorPstates = true;
-        private static bool alwaysOnTop = true;
+//        private static bool alwaysOnTop = true;
 
         public static int[] freq = new int[8];
 
@@ -340,13 +340,14 @@ namespace BrazosTweaker
 			}
 		}
 
-        private void paypal_Click(object sender, EventArgs e)
+/*
+	private void paypal_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KDVJC4359EN64");
         }
-
-		private void timer1_Tick(object sender, EventArgs e)
-		{
+*/
+	private void timer1_Tick(object sender, EventArgs e)
+	{
             if (monitorPstates)
             {
                 int currentNbPState = K10Manager.GetNbPState();
