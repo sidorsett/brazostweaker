@@ -330,93 +330,37 @@ private:
 			WrmsrTx(msrIndex, lower, higher, affinityMask);
 		} else if ((index == 3 || index == 4) && (core == 1)) { //we will handle NB P0/1 settings here
 			index = index - 3;
-			EnableNBPstateSwitching();
-			unsigned int curNbstate = GetNbPState();
-			unsigned int changedNbstate = curNbstate;
-			bool applyImmediately = (curNbstate != index);
-			if (applyImmediately)
-            {
-				SwitchToNbPState(index);
-                for (int i = 0; i < 10; i++)
-                {
-					Sleep(100);
-					changedNbstate = GetNbPState();
-					if (changedNbstate == index) i = 1000;
-                }
-            }
-			curNbstate = GetNbPState();
             if (index == 0) // NB P-state0
             {
-				//DRAM needs to be set into SelfRefresh
-                //K10Manager.DisDllShutDown();
-                //K10Manager.EnterDramSelfRefresh(); //NB Pstate HW switching needs to be disabled before NbPsCtrDis
                 // save the new settings
                 DWORD config = ReadPciConfigDword(0xC3, 0xDC);
-                //const uint mask = 0x07F7F000; //enable overwrite of Vid and Div
                 const DWORD mask = 0x0007F000; //enable overwrite of Vid only
                 config = (config & ~mask) | (lowMsr & mask);
-                //DWORD voltage;
-                //ReadPciConfigDwordEx(0xC3, 0x15C, &voltage);
-                //const DWORD maskvolt = 0x00007F00;
-                //DWORD check = lowMsr >> 12 & 0x7F;
-                //voltage = (voltage & ~maskvolt) | ((check << 8) & maskvolt);
                 WritePciConfigDword(0xC3, 0xDC, config);
-                //WritePciConfigDwordEx(0xC3, 0x15C, voltage);
             } else if (index == 1)
             {
                 // save the new settings
-                //K10Manager.DisDllShutDown();
-                //K10Manager.EnterDramSelfRefresh(); //NB Pstate HW switching needs to be disabled before NbPsCtrDis
                 DWORD config = ReadPciConfigDword(0xC6, 0x90);
-                //const uint mask = 0x00007F7F; //enable DID and VID modification
                 const DWORD mask = 0x00007F00; //enable VID modification only
                 config = (config & ~mask) | (lowMsr & mask);
-                DWORD voltage;
-                ReadPciConfigDwordEx(0xC3, 0x15C, &voltage);
-                //const DWORD maskvolt = 0x0000007F;
-		const DWORD maskvolt = 0x7F7F7F7F;
-                DWORD check = lowMsr >> 8;
-                //voltage = (voltage & ~maskvolt) | (check & maskvolt);
-		voltage = (voltage & ~maskvolt) | ((check << 24) | (check << 16) | (check << 8) | check & maskvolt);
                 WritePciConfigDword(0xC6, 0x90, config);
-                WritePciConfigDwordEx(0xC3, 0x15C, voltage);
-            }
-			if (curNbstate == 0)
-            {
-                SwitchToNbPState(1);
-                for (int i = 0; i < 10; i++)
-                {
-                    Sleep(100); // let transitions complete
-                    changedNbstate = GetNbPState();
-                    if (changedNbstate == 1) i = 1000;
-                }
-                SwitchToNbPState(0);
-                for (int i = 0; i < 10; i++)
-                {
-                    Sleep(100); // let transitions complete
-                    changedNbstate = GetNbPState();
-                    if (changedNbstate == 0) i = 1000;
-                }
-            }
-            else if (curNbstate == 1)
-            {
-                SwitchToNbPState(0);
-                for (int i = 0; i < 10; i++)
-                {
-                    Sleep(100); // let transitions complete
-                    changedNbstate = GetNbPState();
-                    if (changedNbstate == 0) i = 1000;
-                }
-                SwitchToNbPState(1);
-                for (int i = 0; i < 10; i++)
-                {
-                    Sleep(100); // let transitions complete
-                    changedNbstate = GetNbPState();
-                    if (changedNbstate == 1) i = 1000;
-                }
-            }
 
+		DWORD voltage;
+                ReadPciConfigDwordEx(0xC3, 0x15C, &voltage);
+		const DWORD maskvolt = 0x7F7F7F7F;
+		const DWORD check = 0x7C7C7C7C;
+		voltage = (voltage & ~maskvolt) | (check & maskvolt);
+                WritePciConfigDwordEx(0xC3, 0x15C, voltage);
+		
+		int curNbstate = GetNbPState();
+		if (curNbstate == 1)
+		{
+			EnableNBPstateSwitching();
+			SwitchToNbPState(0);
 			DisableNBPstateSwitching();
+		}
+		
+            }
 		} 
 	}
 
