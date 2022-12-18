@@ -540,7 +540,7 @@
             this.Controls.Add(this.serviceButton);
             this.Controls.Add(this.powerSchemesComboBox);
             this.Controls.Add(this.applyButton);
-            this.Controls.Add(this.paypal);
+//            this.Controls.Add(this.paypal);
             this.Controls.Add(this.ecread);
             this.Controls.Add(this.alwaysOnTopCheck);
             this.Controls.Add(this.pstateLabel);
@@ -586,7 +586,7 @@
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.NotifyIcon notifyIcon;
 		private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.LinkLabel paypal;
+//        private System.Windows.Forms.LinkLabel paypal;
         private System.Windows.Forms.TextBox ecread;
         private System.Windows.Forms.TabPage tabPageP0;
 		private PStateControl p0StateControl;
