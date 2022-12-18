@@ -187,7 +187,7 @@ private:
 
 		// try to temporarily set the number of boosted (Turbo) P-states to 0
 		// this should suspend the restriction of software P-state multis by F3x1F0[MaxSwPstateCpuCof]
-		const bool turboEnabled = TurboManager::IsEnabled();
+//		const bool turboEnabled = TurboManager::IsEnabled();
 
 		// get the max enabled software P-state from core 0
 		DWORD lower, higher;
