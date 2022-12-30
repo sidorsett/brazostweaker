@@ -5,7 +5,7 @@ Original version of the tool hosted at [Google Code](https://code.google.com/arc
 - The original version of the tool had an error in its service implementation. Unlike the frontend application, the service missed to set up all necessary CPU registers, which prevented NB VID settings from taking effect after startup or resume. This had effect on both NB states (NBP1 as well as NBP0).
 - The original version of the tool as well as original BIOS implementations incorrectly applied voltage settings of NB P1 state, which effectively made NBP1 to inherit NBP0 VID.
 
-The improved version available here is fully inline with BKDG (BIOS and Kernel Developer's Guide) for AMD Family 14h, but is tested only on E-350 APU. Considering that all other APUs listed above belong to the same CPU family 14h, the improvements are expected to work on the rest of them as well. Notice that the original version could allow you to go very low with undervolting NBP1 state, because in reality it was faky. Using the same NBP1 settings with the new version may cause your system to crash. Basically, you need to find out valid NBP1 voltage settings as described below from scratch. To confirm improvements over the original settings you can compare tempeartures of your system against setup with the original tool (this is actually how I reverse engineered APU behavior myself). Don't forget to fix fan speed for the duration of your temperature tests.
+The improved version available here is fully inline with BKDG (BIOS and Kernel Developer's Guide) for AMD Family 14h and is tested only on E-350 APU. Considering that all other APUs listed above belong to the same CPU family 14h, the improvements are expected to work on the rest of them as well. Notice that the original version could allow you to go very low with undervolting NBP1 state, because in reality it was faky. Using the same NBP1 settings with the new version may cause your system to crash. Basically, you need to find out valid NBP0 and NBP1 voltage settings as described below from scratch. To confirm improvements over the original settings you can compare tempeartures of your system against setup with the original tool. Remember to fix fan speed for the duration of your temperature tests.
 
 ## Installation ##
 To use the tool and it's built-in service, you need to obviously install the given files from the Download section. It could be, that you need to download and install Microsofts .NET Framework 3.5 upfront, but only in case, it can't be found.
@@ -58,7 +58,7 @@ Just a little lower and it hangs. Just press the Power button for a while and it
 There is no opportunity to mess with the dividers on the NB so far.
 
 ## Testing ##
-If everything looks alright after you apply new settings, you can download FurMark, which is program to do some stress testing. Doing that, tells you, if the system is really stable in most cases. It avoids getting blue screens or freezes later, which can be really annoying.
+If everything looks alright after you apply new settings, you can download [FurMark](https://geeks3d.com/furmark/), which is program to do some stress testing. Doing that, tells you, if the system is really stable in most cases. It avoids getting blue screens or freezes later, which can be really annoying.
 
 One should stress each of the P-states and NB P-separately. This can be achieved by modifying the selecting specific Windows power options:
   1. Go to "Power Options" in the Control Panel. 
