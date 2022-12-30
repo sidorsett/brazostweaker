@@ -7,6 +7,13 @@ Original version of the tool hosted at [Google Code](https://code.google.com/arc
 
 The improved version available here is fully inline with BKDG (BIOS and Kernel Developer's Guide) for AMD Family 14h and is tested only on E-350 APU. Considering that all other APUs listed above belong to the same CPU family 14h, the improvements are expected to work on the rest of them as well. Notice that the original version could allow you to go very low with undervolting NBP1 state, because in reality it was faky. Using the same NBP1 settings with the new version may cause your system to crash. Basically, you need to find out valid NBP0 and NBP1 voltage settings as described below from scratch. To confirm improvements over the original settings you can compare tempeartures of your system against setup with the original tool. Remember to fix fan speed for the duration of your temperature tests.
 
+## Compilation/Reproduction ##
+1.	Install [Visual Studio 2013 Community Edition](http://go.microsoft.com/?linkid=9863609).
+1.	Install [Installer Project](https://marketplace.visualstudio.com/items?itemName=UnniRavindranathan-MSFT.MicrosoftVisualStudio2013InstallerProjects) extension.
+1.	Install [SDK 7](https://go.microsoft.com/fwlink/?LinkID=191424).
+1. Add `%VS100COMNTOOLS%..\IDE` to the `PATH` environment variable.
+
+
 ## Installation ##
 To use the tool and it's built-in service, you need to obviously install the given files from the Download section. It could be, that you need to download and install Microsofts .NET Framework 3.5 upfront, but only in case, it can't be found.
 If you already have a previous version of the BrazosTweaker (OntarioTweaker or PhenomMsrTweaker) installed, I strongly suggest to uninstall it first.
