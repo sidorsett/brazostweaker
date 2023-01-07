@@ -4,7 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6A06588C-4C26-4EE1-A48B-ABEAEA6F490F}"
 	ProjectSection(SolutionItems) = preProject
 		License.txt = License.txt
-		Webpage.url = Webpage.url
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrazosTweaker", "BrazosTweaker\BrazosTweaker.csproj", "{4031CF53-1EDB-4140-BB34-7324C35F57BD}"
