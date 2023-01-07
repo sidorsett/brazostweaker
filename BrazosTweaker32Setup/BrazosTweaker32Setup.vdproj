@@ -21,12 +21,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_2C1B9CB9426E40E78FEA2ECD5FC12D8D"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_6E4AB1BE49B944E08E3476EFCDB3969A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -221,26 +215,6 @@
                 }
             "SourcePath" = "8:..\\Release\\BrazosTweaker.exe"
             "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_31DFC59B3B2D4A3C9DC68DD42BDE7E06"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2C1B9CB9426E40E78FEA2ECD5FC12D8D"
-            {
-            "SourcePath" = "8:..\\Webpage.url"
-            "TargetName" = "8:Webpage.url"
             "Tag" = "8:"
             "Folder" = "8:_31DFC59B3B2D4A3C9DC68DD42BDE7E06"
             "Condition" = "8:"
