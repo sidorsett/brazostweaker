@@ -340,12 +340,6 @@ namespace BrazosTweaker
 			}
 		}
 
-/*
-	private void paypal_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KDVJC4359EN64");
-        }
-*/
 	private void timer1_Tick(object sender, EventArgs e)
 	{
             if (monitorPstates)
