@@ -533,7 +533,7 @@
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
                             "Setting" = "3:2"
-                            "Value" = "8:BrazosTweaker (c) Martin Kinkelin and Sven Wittek 2o11. Copyright © https://github.com/sidorsett/brazostweaker 2022-2023"
+                            "Value" = "8:Copyright © https://github.com/sidorsett/brazostweaker 2022-2023.\nCopyright © Martin Kinkelin and Sven Wittek 2o11."
                             "DefaultValue" = "8:#1202"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -546,7 +546,7 @@
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
                             "Setting" = "3:1"
-                            "Value" = "8:#1203"
+                            "Value" = "8:The installer will guide you through the steps required to install [ProductName] on your computer.\n\nPlease ensure any other version of [ProductName] is uninstalled before continuing the installation."
                             "DefaultValue" = "8:#1203"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -612,7 +612,7 @@
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
                             "Setting" = "3:2"
-                            "Value" = "8:BrazosTweaker (c) Martin Kinkelin and Sven Wittek 2o10. Copyright © https://github.com/sidorsett/brazostweaker 2022-2023"
+                            "Value" = "8:Copyright © https://github.com/sidorsett/brazostweaker 2022-2023.\nCopyright © Martin Kinkelin and Sven Wittek 2o11."
                             "DefaultValue" = "8:#1202"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -625,7 +625,7 @@
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
                             "Setting" = "3:2"
-                            "Value" = "8:Hey there and thanks for having a look at BrazosTweaker. Let me begin with a warning ;) - you need to uninstall any older version before installing this one."
+                            "Value" = "8:The installer will guide you through the steps required to install [ProductName] on your computer.\n\nPlease ensure any other version of [ProductName] is uninstalled before continuing the installation."
                             "DefaultValue" = "8:#1203"
                             "UsePlugInResources" = "11:TRUE"
                             }
