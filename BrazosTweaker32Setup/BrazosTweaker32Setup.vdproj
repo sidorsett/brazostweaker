@@ -204,7 +204,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:BrazosTweaker, Version=1.0.7, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:BrazosTweaker, Version=1.1.1, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_2ABBB2A640F44EE397CAB70A0BF68DA9"
@@ -395,13 +395,13 @@
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.7"
-        "Manufacturer" = "8:Martin Kinkelin and Sven Wittek"
+        "ProductVersion" = "8:1.1.1"
+        "Manufacturer" = "8:https://github.com/sidorsett/brazostweaker"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:BrazosTweaker x86 Setup"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Martin Kinkelin and Sven Wittek"
+        "ARPCONTACT" = "8:https://github.com/sidorsett/brazostweaker"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -570,7 +570,7 @@
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
                             "Setting" = "3:2"
-                            "Value" = "8:BrazosTweaker (c) Martin Kinkelin and Sven Wittek 2o11"
+                            "Value" = "8:BrazosTweaker (c) Martin Kinkelin and Sven Wittek 2o11. Copyright © https://github.com/sidorsett/brazostweaker 2022-2023"
                             "DefaultValue" = "8:#1202"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -800,7 +800,7 @@
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
                             "Setting" = "3:2"
-                            "Value" = "8:BrazosTweaker (c) Martin Kinkelin and Sven Wittek 2o11"
+                            "Value" = "8:BrazosTweaker (c) Martin Kinkelin and Sven Wittek 2o11. Copyright © https://github.com/sidorsett/brazostweaker 2022-2023"
                             "DefaultValue" = "8:#1202"
                             "UsePlugInResources" = "11:TRUE"
                             }
@@ -871,7 +871,7 @@
             "ProjectOutputGroupRegister" = "3:1"
             "OutputConfiguration" = "8:Release|Any CPU"
             "OutputGroupCanonicalName" = "8:Built"
-            "OutputProjectGuid" = "8:{4031CF53-1EDB-4140-BB34-7324C35F57BD}"
+            "OutputProjectGuid" = "8:{d49983a0-3641-4aaa-8499-b0f983d7a36e}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {
