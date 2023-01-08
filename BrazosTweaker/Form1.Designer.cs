@@ -66,7 +66,6 @@
             this.pstateLabel2 = new System.Windows.Forms.Label();
             this.pstateLabel3 = new System.Windows.Forms.Label();
             this.pstateLabel4 = new System.Windows.Forms.Label();
-            //this.paypal = new System.Windows.Forms.LinkLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
@@ -464,22 +463,6 @@
             this.pstateLabel4.TabIndex = 18;
             this.pstateLabel4.Text = "-1";
             // 
-            // paypal
-            //
-/*
-            this.paypal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.paypal.AutoSize = true;
-            this.paypal.Location = new System.Drawing.Point(12, 3);
-            this.paypal.Margin = new System.Windows.Forms.Padding(3);
-            this.paypal.Name = "paypal";
-            this.paypal.Size = new System.Drawing.Size(192, 13);
-            this.paypal.TabIndex = 6;
-            this.paypal.TabStop = true;
-            this.paypal.Text = "Please donate to support development.";
-            this.paypal.Click += new System.EventHandler(this.paypal_Click);
-*/
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
@@ -540,7 +523,6 @@
             this.Controls.Add(this.serviceButton);
             this.Controls.Add(this.powerSchemesComboBox);
             this.Controls.Add(this.applyButton);
-//            this.Controls.Add(this.paypal);
             this.Controls.Add(this.ecread);
             this.Controls.Add(this.alwaysOnTopCheck);
             this.Controls.Add(this.pstateLabel);
@@ -561,7 +543,7 @@
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(380, 210);
             this.Name = "Form1";
-            this.Text = "BrazosTweaker V1.0.7";
+            this.Text = "BrazosTweaker V1.1.1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.tabControl1.ResumeLayout(false);
             this.tabPageP0.ResumeLayout(false);
@@ -586,7 +568,6 @@
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.NotifyIcon notifyIcon;
 		private System.Windows.Forms.TabControl tabControl1;
-//        private System.Windows.Forms.LinkLabel paypal;
         private System.Windows.Forms.TextBox ecread;
         private System.Windows.Forms.TabPage tabPageP0;
 		private PStateControl p0StateControl;
